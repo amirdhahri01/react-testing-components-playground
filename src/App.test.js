@@ -1,8 +1,18 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe("App Component Tests suit", () => {
+
+  test("renders learn react link", () => {
+    render(<App />);
+    const linkElement = screen.getByText(/learn react/i);
+    expect(linkElement).toBeInTheDocument();
+  });
+
+  it("Should href equals to http://localhost/amirdharhi.com", () => {
+    render(<App />);
+    const linkElement = screen.getByText(/learn react/i);
+    expect(linkElement.href).toBe("http://localhost/amirdharhi.com");
+  });
+
+})
